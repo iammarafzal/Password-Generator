@@ -12,6 +12,7 @@ class Window():
 
         self.plen = IntVar()
 
+        # ------------------- Labels and DataFrames -------------------
         lblEntry = Label(self.root, text="Enter Password length: ", font=("Arial", 12, "bold"), pady=10)
         lblEntry.pack(side=TOP, fill=X)
         lblEntry.place(x=15, y=5)
@@ -36,14 +37,17 @@ class Window():
         btnCopy.place(x=260, y=83)
 
 
+
+
+        # ------------------- Functions -------------------
     # Function to validate the input (ensuring only integers)
     def validate_input(self, new_value):
         if new_value == "" or new_value.isdigit():  # Allow empty value or integer input
             return True
         return False
+    
 
-
-    # ------------------- Functionality -------------------
+    # Password Generating Function
     def password_gen(self):
         s1 = string.ascii_uppercase
         s2 = string.ascii_lowercase
@@ -74,7 +78,7 @@ class Window():
         self.OutputTextBox.delete("1.0", END)
         self.OutputTextBox.insert(END, password)
 
-    
+    # Copy Output Password Function
     def copy_output_text(self):
         output_text = self.OutputTextBox.get("1.0", END).strip()
         if output_text:
