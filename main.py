@@ -37,8 +37,6 @@ class Window():
         btnCopy.place(x=260, y=83)
 
 
-
-
         # ------------------- Functions -------------------
     # Function to validate the input (ensuring only integers)
     def validate_input(self, new_value):
